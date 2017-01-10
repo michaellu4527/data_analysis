@@ -25,18 +25,18 @@ def grab_initial_state_data():
 
     print(main_df.head())
 
-    pickle_out = open('fifty_states.pickle', 'wb')
+    pickle_out = open('fifty_states.pickle', 'wb')  # wb is write back
     pickle.dump(main_df, pickle_out)
     pickle_out.close()
 
 #grab_initial_state_data()
 
 # Python built in version
-pickle_in = open('fifty_states.pickle', 'rb')
+pickle_in = open('fifty_states.pickle', 'rb')   # rb is read back
 HPI_data = pickle.load(pickle_in)
 print(HPI_data)
 
 # Pandas version
-HPI_data.to_pickle('pickle.pickle')
-HPI_data2 = pd.read_pickle('pickle.pickle')
+HPI_data.to_pickle('pickle.pickle')     # Sends to pickle
+HPI_data2 = pd.read_pickle('pickle.pickle')     # Read in pickle
 print(HPI_data2)
